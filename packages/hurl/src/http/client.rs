@@ -307,8 +307,7 @@ impl Client {
 
         if get_header_values(&request.headers, "Content-Type").is_empty() {
             if let Some(s) = request.content_type.clone() {
-                list.append(format!("Content-Type: {}", s).as_str())
-                    .unwrap();
+                list.append(format!("Content-Type: {s}").as_str()).unwrap();
             } else {
                 list.append("Content-Type:").unwrap(); // remove header Content-Type
             }
